@@ -1,2 +1,19 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<div class="title">
+  <h1>Longest Word game</h1>
+</div>
+<div class="array">
+
+  <ul id="inline">
+  <% @array.sample(10).each do |x|  %>
+    <li><%= x %></li>
+  <% end %>
+  </ul>
+</div>
+
+<div id="form">
+  <form action="score" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="text" name="word" placeholder="word?">
+    <input type="submit">
+  </form>
+</div>
